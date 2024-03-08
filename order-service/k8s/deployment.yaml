@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      appName: order
+  template:
+    metadata:
+      labels:
+        appName: order
+    spec:
+      serviceAccountName: spring-cloud-kubernetes
+      containers:
+        - name: order-container
+          image: open-ending.com/order-service
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP

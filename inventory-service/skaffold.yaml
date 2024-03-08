@@ -1,0 +1,18 @@
+apiVersion: skaffold/v4beta5
+kind: Config
+metadata:
+  name: inventory-service
+build:
+  artifacts:
+    - image: open-ending.com/inventory-service
+      jib:
+        project: inventory-service
+        args:
+          - -DskipTests
+  tagPolicy:
+    gitCommit: {}
+  local:
+    {}
+manifests:
+  rawYaml:
+    - k8s/**.yaml

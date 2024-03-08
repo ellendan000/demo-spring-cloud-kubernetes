@@ -1,0 +1,19 @@
+apiVersion: skaffold/v4beta5
+kind: Config
+metadata:
+  name: order-service
+build:
+  artifacts:
+    - image: open-ending.com/order-service
+      jib:
+        project: order-service
+        args:
+          - -DskipTests
+  tagPolicy:
+    gitCommit: {}
+  local:
+    {}
+manifests:
+  rawYaml:
+    - k8s/**.yaml
+    - ../k8s/**.yaml

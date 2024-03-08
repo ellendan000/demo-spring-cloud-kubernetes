@@ -1,0 +1,22 @@
+apiVersion: skaffold/v4beta5
+kind: Config
+metadata:
+  name: demo-spring-cloud-kubernetes
+build:
+  artifacts:
+    - image: open-ending.com/inventory-service
+      jib:
+        project: inventory-service
+    - image: open-ending.com/order-service
+      jib:
+        project: order-service
+  tagPolicy:
+    gitCommit: {}
+  local: {}
+manifests:
+  rawYaml:
+    - k8s/**.yaml
+    - inventory-service/k8s/*.yaml
+    - order-service/k8s/*.yaml
+deploy:
+  kubectl: {}

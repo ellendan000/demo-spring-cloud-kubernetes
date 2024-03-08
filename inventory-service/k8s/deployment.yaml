@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inventory-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      appName: inventory
+  template:
+    metadata:
+      labels:
+        appName: inventory
+    spec:
+      containers:
+        - name: inventory-container
+          image: open-ending.com/inventory-service
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          env:
+            - name: STORAGE_ENABLED
+              valueFrom:
+                configMapKeyRef:
+                  name: inventory-configmap
+                  key: storage.enabled

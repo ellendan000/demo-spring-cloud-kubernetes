@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    org:
+      springframework:
+        web:
+          servlet:
+            DispatcherServlet: DEBUG
+
+spring:
+  application:
+    name: inventory-service
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enable: true
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics
+
+business:
+  storage:
+    enabled: ${STORAGE_ENABLED:false}
