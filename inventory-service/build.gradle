@@ -22,6 +22,12 @@ repositories {
     maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
 }
 
+jib {
+    container {
+        creationTime = 'USE_CURRENT_TIMESTAMP'
+    }
+}
+
 def platformBom = 'com.ellendan.servicetemplate:dependencies-bom:1.4.1-SNAPSHOT'
 dependencies {
     implementation platform(platformBom)
