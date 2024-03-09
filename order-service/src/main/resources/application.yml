@@ -8,6 +8,16 @@ spring:
     loadbalancer:
       ribbon:
         enabled: false
+    openfeign:
+      httpclient:
+        connection-timeout: 3000
+        max-connections: 200
+        max-connections-per-route: 50
+        ok-http:
+          read-timeout: 30s
+        okhttp:
+          enabled: true
+
     kubernetes:
       discovery:
         all-namespaces: true
@@ -58,9 +68,6 @@ resilience4j.retry:
     default:
       maxAttempts: 2
       waitDuration: 100
-#  instances:
-#    storage:
-#      baseConfig: default
 resilience4j.ratelimiter:
   configs:
     default:
@@ -69,7 +76,21 @@ resilience4j.ratelimiter:
       limitRefreshPeriod: 30s
       timeoutDuration: 5s
       eventConsumerBufferSize: 100
-
-feign:
-  okhttp:
-    enabled: true
+#resilience4j.bulkhead:
+#  configs:
+#    default:
+#      maxConcurrentCalls: 100
+#  instances:
+#    storage:
+#      maxWaitDuration: 100ms
+#      maxConcurrentCalls: 20
+#
+#resilience4j.thread-pool-bulkhead:
+#  configs:
+#    default:
+#      maxThreadPoolSize: 4
+#      coreThreadPoolSize: 2
+#      queueCapacity: 2
+#  instances:
+#    storage:
+#      baseConfig: default

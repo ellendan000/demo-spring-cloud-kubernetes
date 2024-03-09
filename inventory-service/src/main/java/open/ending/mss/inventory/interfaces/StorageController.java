@@ -13,7 +13,7 @@ import java.util.Random;
 public class StorageController {
     @Value("${business.storage.enabled}")
     private Boolean enabled;
-    private Random random = new Random();
+    private final Random random = new Random();
 
     @GetMapping("/{productId}")
     StorageResponse getProductStorage(@PathVariable String productId) {
