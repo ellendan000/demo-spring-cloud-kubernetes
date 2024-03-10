@@ -16,7 +16,7 @@ $ skaffold dev
 ```
 
 ### 2. API calls
-k8s 外部调用 
+从 k8s 外部调用  
 inventory-service API: `curl http://localhost:31003/storages/123`  
 order-service API: `curl http://localhost:31002/orders --header 'Content-Type: application/json' --data '{"productId": "123"}'`
 
