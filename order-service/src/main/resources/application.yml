@@ -17,7 +17,6 @@ spring:
           read-timeout: 30s
         okhttp:
           enabled: true
-
     kubernetes:
       discovery:
         all-namespaces: true

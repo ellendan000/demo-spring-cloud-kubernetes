@@ -19,3 +19,6 @@ $ skaffold dev
 k8s 外部调用 
 inventory-service API: `curl http://localhost:31003/storages/123`
 order-service API: `curl http://localhost:31002/orders --header 'Content-Type: application/json' --data '{"productId": "123"}'`
+
+3. random exception for circuit-break 
+为了展示resilience4j的熔断器效果，在 StorageController 中添加了random exception，如果影响展示 load-balance 的效果，可将代码注释掉。
