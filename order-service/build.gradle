@@ -30,7 +30,7 @@ jib {
     }
 }
 
-def platformBom = 'com.ellendan.servicetemplate:dependencies-bom:1.4.1-SNAPSHOT'
+def platformBom = 'com.ellendan.servicetemplate:dependencies-bom:1.4.2-SNAPSHOT'
 dependencies {
     implementation platform(platformBom)
     compileOnly platform(platformBom)
