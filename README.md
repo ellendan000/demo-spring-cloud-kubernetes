@@ -25,7 +25,7 @@ $ skaffold dev
 ```
 
 ### 2. API calls
-macOS 的 minikube ip不能使用，想要从 k8s 外部调用 k8s cluster的话，需要使用`minikube tunnel`的方式。
+macOS 的 minikube ip不能使用，想要从 k8s 外部调用 k8s cluster的话，需要“额外”使用`minikube tunnel`的方式。
 针对服务打开tunnel的方式：
 ```
 $ minikube service order-service -p local-custom
