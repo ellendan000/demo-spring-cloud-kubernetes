@@ -38,5 +38,7 @@ $ minikube service spring-admin -p local-custom
 - inventory-service API: `curl http://localhost:<random-port>/storages/123`  
 - order-service API: `curl http://localhost:<random-port>/orders --header 'Content-Type: application/json' --data '{"productId": "123"}'`
 
+如果使用`minikube tunnel` 打开 ingress 的话，使用命令`curl --resolve "microservices.test:80:127.0.0.1" -i http://microservices.test/orders --header 'Content-Type: application/json' --data '{"productId": "123"}'`
+
 ### 3. random exception for circuit-break 
 为了展示resilience4j的熔断器效果，在 StorageController 中添加了random exception，如果影响展示 load-balance 的效果，可将代码注释掉。
