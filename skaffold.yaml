@@ -10,6 +10,9 @@ build:
     - image: open-ending.com/order-service
       jib:
         project: order-service
+    - image: open-ending.com/spring-admin
+      jib:
+        project: spring-admin
   tagPolicy:
     gitCommit: {}
   local: {}
@@ -18,5 +21,6 @@ manifests:
     - k8s/**.yaml
     - inventory-service/k8s/*.yaml
     - order-service/k8s/*.yaml
+    - spring-admin/k8s/*.yaml
 deploy:
   kubectl: {}

@@ -1,12 +1,12 @@
 apiVersion: skaffold/v4beta5
 kind: Config
 metadata:
-  name: inventory-service
+  name: spring-admin
 build:
   artifacts:
-    - image: open-ending.com/inventory-service
+    - image: open-ending.com/spring-admin
       jib:
-        project: inventory-service
+        project: spring-admin
         args:
           - -DskipTests
   tagPolicy:

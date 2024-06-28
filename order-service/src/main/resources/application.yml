@@ -45,7 +45,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,metrics
+        include: "*"
 
 resilience4j.circuitbreaker:
   configs:

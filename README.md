@@ -29,7 +29,8 @@ macOS 的 minikube ip不能使用，想要从 k8s 外部调用 k8s cluster的话
 针对服务打开tunnel的方式：
 ```
 $ minikube service order-service -p local-custom
-$ minikube service inventory-service -service -p local-custom
+$ minikube service inventory-service -p local-custom
+$ minikube service spring-admin -p local-custom
 # 这时 minikube 会将内部 Service 的端口，暴露成宿主机的一个随机端口<random-port>。
 ```
 

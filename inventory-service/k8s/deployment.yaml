@@ -12,6 +12,7 @@ spec:
       labels:
         appName: inventory
     spec:
+      serviceAccountName: spring-cloud-kubernetes
       containers:
         - name: inventory-container
           image: open-ending.com/inventory-service

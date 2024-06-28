@@ -16,4 +16,4 @@ build:
 manifests:
   rawYaml:
     - k8s/**.yaml
-    - ../k8s/**.yaml
+    - ../k8s/privileges.yaml

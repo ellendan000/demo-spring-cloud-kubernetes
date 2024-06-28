@@ -10,4 +10,5 @@
 rootProject.name = 'demo-spring-cloud-kubernetes'
 include 'inventory-service'
 include 'order-service'
+include 'spring-admin'
 

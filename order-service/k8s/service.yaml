@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: order-service
+  labels:
+    frame: spring
 spec:
   ports:
     - port: 8080
